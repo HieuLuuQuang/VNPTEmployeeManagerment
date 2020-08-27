@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">VNPTEmployeeManagement</string>
+    <string name="splash_title">Quản lý nhân viên VNPT</string>
+    <string name="department">Phòng ban</string>
+    <string name="employee_info">Thông tin nhân viên</string>
+    <string name="employee_list">Danh sách nhân viên</string>
+    <string name="notice">Thông báo</string>
 </resources>

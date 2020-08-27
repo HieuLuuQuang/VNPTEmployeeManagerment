@@ -3,16 +3,58 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    tools:context=".HomeActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/btnDepartment"
+        style="@style/DepartmentStyle"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:background="@color/app_bg"
+        android:text="@string/department"
+        app:layout_constraintEnd_toStartOf="@+id/btnClass"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/btnClass"
+        style="@style/DepartmentStyle"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="@color/app_bg"
+        android:text="@string/employee_list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnDepartment"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnProfile"
+        style="@style/DepartmentStyle"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="38dp"
+        android:background="@color/app_bg"
+        android:text="@string/employee_info"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnNotice"
+        app:layout_constraintStart_toStartOf="@id/btnDepartment"
+        app:layout_constraintTop_toBottomOf="@id/btnDepartment" />
+
+    <Button
+        android:id="@+id/btnNotice"
+        style="@style/DepartmentStyle"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="36dp"
+        android:background="@color/app_bg"
+        android:text="@string/notice"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/btnProfile"
+        app:layout_constraintTop_toBottomOf="@id/btnDepartment"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
