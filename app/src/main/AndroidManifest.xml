@@ -17,8 +17,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".HomeActivity">
-        </activity>
+        <activity android:name=".HomeActivity"></activity>
+        <activity android:name=".EmployeeInfoActivity" android:theme="@style/SplashscreenTheme"></activity>
+        <activity android:name=".ProfileActivity"></activity>
 
     </application>
 

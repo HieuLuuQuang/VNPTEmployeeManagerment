@@ -14,17 +14,19 @@
         android:layout_height="wrap_content"
         android:background="@color/app_bg"
         android:text="@string/department"
-        app:layout_constraintEnd_toStartOf="@+id/btnClass"
+        android:onClick="onClick"
+        app:layout_constraintEnd_toStartOf="@+id/btnEmployee"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnClass"
+        android:id="@+id/btnEmployee"
         style="@style/DepartmentStyle"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:background="@color/app_bg"
         android:text="@string/employee_list"
+        android:onClick="onClick"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnDepartment"
         app:layout_constraintTop_toTopOf="parent" />
@@ -34,13 +36,12 @@
         style="@style/DepartmentStyle"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="38dp"
+        android:layout_marginTop="10dp"
         android:background="@color/app_bg"
+        android:onClick="onClick"
         android:text="@string/employee_info"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnNotice"
-        app:layout_constraintStart_toStartOf="@id/btnDepartment"
+        app:layout_constraintEnd_toStartOf="@+id/btnEmployee"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnDepartment" />
 
     <Button
@@ -48,13 +49,11 @@
         style="@style/DepartmentStyle"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="36dp"
+        android:layout_marginTop="10dp"
         android:background="@color/app_bg"
+        android:onClick="onClick"
         android:text="@string/notice"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/btnProfile"
-        app:layout_constraintTop_toBottomOf="@id/btnDepartment"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toEndOf="@+id/btnProfile"
+        app:layout_constraintTop_toBottomOf="@id/btnDepartment" />
 </androidx.constraintlayout.widget.ConstraintLayout>
