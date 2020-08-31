@@ -23,6 +23,8 @@
         <activity android:name=".ProfileActivity" android:screenOrientation="portrait"></activity>
         <activity android:name=".AddEmployeeActivity" android:screenOrientation="portrait"></activity>
         <activity android:name=".NoticeActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".EmployeesActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".NewWordActivity" android:screenOrientation="portrait"></activity>
 
     </application>
 

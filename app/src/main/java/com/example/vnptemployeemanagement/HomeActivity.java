@@ -13,7 +13,7 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.home_activity);
         ImageView icBack = findViewById(R.id.ic_left);
         TextView title = findViewById(R.id.toolbarTitle);
         title.setText(getString(R.string.splash_title));
@@ -42,7 +42,7 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(new Intent(HomeActivity.this, NoticeActivity.class));
                 break;
             case R.id.btnAddEmployee:
-                startActivity(new Intent(HomeActivity.this, AddEmployeeActivity.class));
+                startActivity(new Intent(HomeActivity.this, EmployeesActivity.class));
                 break;
             default:
                 break;
