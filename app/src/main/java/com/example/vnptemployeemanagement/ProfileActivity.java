@@ -25,11 +25,8 @@ public class ProfileActivity extends AppCompatActivity {
                 view ->
                         onBackPressed()
         );
-        ProfileFragment profileFragment = new ProfileFragment();
-        fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.imployee_fragment, profileFragment);
-        fragmentTransaction.addToBackStack(profileFragment.getTag()).commit();
-        imgEdit = findViewById(R.id.buttonEdit);
+        addProfileFragment();
+
         //Toolbar toolbar = findViewById(R.id.toolbar);
        // setSupportActionBar(toolbar);
     }
@@ -67,5 +64,16 @@ public class ProfileActivity extends AppCompatActivity {
           //  Log.i("MainActivity", "nothing on backstack, calling super");
             super.onBackPressed();
         }
+    }
+
+    public void addProfileFragment(){
+        ProfileFragment profileFragment = new ProfileFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("TITLE", getString(R.string.add_employee));
+        profileFragment.setArguments(bundle);
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.imployee_fragment, profileFragment);
+        fragmentTransaction.commit();
+        imgEdit = findViewById(R.id.buttonEdit);
     }
 }

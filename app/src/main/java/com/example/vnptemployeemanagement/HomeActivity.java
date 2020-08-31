@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -12,6 +14,14 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ImageView icBack = findViewById(R.id.ic_left);
+        TextView title = findViewById(R.id.toolbarTitle);
+        title.setText(getString(R.string.splash_title));
+        icBack.setVisibility(View.GONE);
+        icBack.setOnClickListener(
+                view ->
+                        onBackPressed()
+        );
     }
 
     @Override
@@ -29,9 +39,10 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(new Intent(HomeActivity.this, ProfileActivity.class));
                 break;
             case R.id.btnNotice:
+                startActivity(new Intent(HomeActivity.this, NoticeActivity.class));
                 break;
-            case R.id.btnEmployee:
-
+            case R.id.btnAddEmployee:
+                startActivity(new Intent(HomeActivity.this, AddEmployeeActivity.class));
                 break;
             default:
                 break;

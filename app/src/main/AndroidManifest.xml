@@ -21,6 +21,8 @@
         <activity android:name=".HomeActivity" android:screenOrientation="portrait"></activity>
         <activity android:name=".OrganisationActivity" android:screenOrientation="portrait"></activity>
         <activity android:name=".ProfileActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".AddEmployeeActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".NoticeActivity" android:screenOrientation="portrait"></activity>
 
     </application>
 
