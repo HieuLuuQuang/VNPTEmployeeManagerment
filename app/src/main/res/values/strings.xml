@@ -19,5 +19,7 @@
     <string name="contract">Hơp đồng</string>
     <string name="congtrac_end">Ngày hết hạn hợp đồng</string>
     <string name="salary">Lương</string>
+    <string name="description">Mô tả</string>
+    <string name="edit_profile">Edit profile</string>
 
 </resources>
