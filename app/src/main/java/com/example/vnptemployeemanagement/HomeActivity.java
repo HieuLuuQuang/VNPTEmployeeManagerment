@@ -22,7 +22,8 @@ public class HomeActivity extends AppCompatActivity {
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.btnDepartment:
+            case R.id.btnOrganisation:
+                startActivity(new Intent(HomeActivity.this, OrganisationActivity.class));
                 break;
             case R.id.btnProfile:
                 startActivity(new Intent(HomeActivity.this, ProfileActivity.class));
@@ -30,7 +31,7 @@ public class HomeActivity extends AppCompatActivity {
             case R.id.btnNotice:
                 break;
             case R.id.btnEmployee:
-                startActivity(new Intent(HomeActivity.this, EmployeeInfoActivity.class));
+
                 break;
             default:
                 break;

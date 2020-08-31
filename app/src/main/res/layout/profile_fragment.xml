@@ -115,6 +115,26 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="left"
+                        android:text="@string/organisation" />
+
+                    <TextView
+                        android:id="@+id/tvOrganisation"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="VNPT Ha Noi" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/grey_border"
+                    android:padding="10dp">
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
                         android:text="@string/department" />
 
                     <TextView
@@ -185,6 +205,35 @@
                         android:gravity="right"
                         android:text="Độc thân" />
                 </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    style="@style/BigDarkText"
+                    android:gravity="center_vertical"
+                    android:padding="10dp"
+                    android:background="@color/lightGrey"
+                    android:text="@string/contact_info"></TextView>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/grey_border"
+                    android:padding="10dp">
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:text="@string/phone" />
+
+                    <TextView
+                        android:id="@+id/tvContractEnd"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="0948121111" />
+                </LinearLayout>
                 <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
@@ -224,54 +273,6 @@
                         android:layout_weight="1"
                         android:gravity="right"
                         android:text="Xa La, Hà Đông, Hà Nội, Việt Nam" />
-                </LinearLayout>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    style="@style/BigDarkText"
-                    android:gravity="center_vertical"
-                    android:padding="10dp"
-                    android:background="@color/lightGrey"
-                    android:text="@string/general_info"></TextView>
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/grey_border"
-                    android:padding="10dp">
-                    <TextView
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="left"
-                        android:text="@string/salary" />
-
-                    <TextView
-                        android:id="@+id/tvSalary"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="10.000.000" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/grey_border"
-                    android:padding="10dp">
-                    <TextView
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="left"
-                        android:text="@string/congtrac_end" />
-
-                    <TextView
-                        android:id="@+id/tvContractEnd"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="6/8/2022" />
                 </LinearLayout>
             </LinearLayout>
         </RelativeLayout>

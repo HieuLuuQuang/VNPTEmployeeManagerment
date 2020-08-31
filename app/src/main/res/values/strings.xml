@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">VNPTEmployeeManagement</string>
     <string name="splash_title">Quản lý nhân viên VNPT</string>
-    <string name="department">Đơn vị</string>
+    <string name="organisation">Đơn vị</string>
+    <string name="department">Phòng ban</string>
     <string name="employee_info">Thông tin nhân viên</string>
     <string name="employee_list">Danh sách nhân viên</string>
     <string name="notice">Thông báo</string>
@@ -21,5 +22,6 @@
     <string name="salary">Lương</string>
     <string name="description">Mô tả</string>
     <string name="edit_profile">Edit profile</string>
+    <string name="contact_info">Thông tin liên hệ</string>
 
 </resources>

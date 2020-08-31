@@ -8,12 +8,12 @@
     tools:context=".HomeActivity">
 
     <Button
-        android:id="@+id/btnDepartment"
+        android:id="@+id/btnOrganisation"
         style="@style/DepartmentStyle"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:background="@color/app_bg"
-        android:text="@string/department"
+        android:text="@string/organisation"
         android:onClick="onClick"
         app:layout_constraintEnd_toStartOf="@+id/btnEmployee"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,10 +25,10 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:background="@color/app_bg"
-        android:text="@string/employee_list"
+        android:text="Thêm nhân viên"
         android:onClick="onClick"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnDepartment"
+        app:layout_constraintStart_toEndOf="@+id/btnOrganisation"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
@@ -42,7 +42,7 @@
         android:text="@string/employee_info"
         app:layout_constraintEnd_toStartOf="@+id/btnEmployee"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnDepartment" />
+        app:layout_constraintTop_toBottomOf="@id/btnOrganisation" />
 
     <Button
         android:id="@+id/btnNotice"
@@ -55,5 +55,5 @@
         android:text="@string/notice"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnProfile"
-        app:layout_constraintTop_toBottomOf="@id/btnDepartment" />
+        app:layout_constraintTop_toBottomOf="@id/btnOrganisation" />
 </androidx.constraintlayout.widget.ConstraintLayout>

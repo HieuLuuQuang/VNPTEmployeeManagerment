@@ -52,13 +52,24 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         style="@style/MediumBlackText"
+                        android:text="@string/organisation" />
+
+                    <EditText
+                        android:id="@+id/tvOrganisation"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Nhập tên đơn vị" />
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/MediumBlackText"
                         android:text="@string/department" />
 
                     <EditText
                         android:id="@+id/tvDepartment"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Nhập tên đơn vị" />
+                        android:hint="Nhập tên phòng ban" />
                     <TextView
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
@@ -92,7 +103,17 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:hint="Độc thân" />
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/MediumBlackText"
+                    android:text="@string/phone" />
 
+                <EditText
+                    android:id="@+id/tvPhone"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nhập địện thoại" />
                     <TextView
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
@@ -115,20 +136,6 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:hint="Nhập địa chỉ" />
-
-                    <TextView
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/MediumBlackText"
-                        android:gravity="left"
-                        android:text="@string/description" />
-
-                    <EditText
-                        android:id="@+id/tvSalary"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Nhập mô tả" />
-
             </LinearLayout>
             <Button
                 android:id="@+id/btnSubmit"
