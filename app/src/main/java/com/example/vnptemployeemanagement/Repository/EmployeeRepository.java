@@ -20,7 +20,7 @@ import android.app.Application;
 
 import androidx.lifecycle.LiveData;
 
-import com.example.vnptemployeemanagement.Employee;
+import com.example.vnptemployeemanagement.Models.Employee;
 import com.example.vnptemployeemanagement.Utils.database.EmployeeRoomDatabase;
 import com.example.vnptemployeemanagement.EmployeeDao;
 

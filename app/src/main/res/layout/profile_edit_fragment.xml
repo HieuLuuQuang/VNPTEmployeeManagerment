@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     tools:context=".ProfileActivity">
 
     <androidx.core.widget.NestedScrollView
@@ -11,142 +12,203 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/appBarLayout"
         android:fillViewport="true">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <LinearLayout
                 android:id="@+id/llInfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/llIamge"
                 android:gravity="left"
-                android:layout_margin="5dp"
-                android:padding="10dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="10dp">
 
-                    <TextView
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/MediumBlackText"
-                        android:text="@string/full_name" />
-
-                    <EditText
-                        android:id="@+id/tvName"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:hint="Luu Quang Hieu" />
-                    <TextView
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/MediumBlackText"
-                        android:text="@string/birthday" />
-
-                    <EditText
-                        android:id="@+id/tvBirthday"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/MediumBlackText"
-                        android:hint="Nhập ngày sinh" />
-                    <TextView
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/MediumBlackText"
-                        android:text="@string/organisation" />
-
-                    <EditText
-                        android:id="@+id/tvOrganisation"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Nhập tên đơn vị" />
-                    <TextView
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/MediumBlackText"
-                        android:text="@string/department" />
-
-                    <EditText
-                        android:id="@+id/tvDepartment"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Nhập tên phòng ban" />
-                    <TextView
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/MediumBlackText"
-                        android:text="@string/gender" />
-
-                    <EditText
-                        android:id="@+id/tvGender"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Nhập giới tính" />
-                    <TextView
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/MediumBlackText"
-                        android:text="@string/job_family" />
-
-                    <EditText
-                        android:id="@+id/tvJob"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Nhập chức vụ" />
-                    <TextView
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/MediumBlackText"
-                        android:text="@string/status" />
-
-                    <EditText
-                        android:id="@+id/tvStatus"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Độc thân" />
                 <TextView
+                    style="@style/MediumBlackText"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
+                    android:text="@string/full_name" />
+
+                <EditText
+                    android:id="@+id/tvName"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_all_round_grey"
+                    android:padding="5dp"
+                    android:textAppearance="@style/EditTextStyle"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Luu Quang Hieu" />
+
+                <TextView
                     style="@style/MediumBlackText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/birthday" />
+
+                <EditText
+                    android:id="@+id/tvBirthday"
+                    style="@style/MediumBlackText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_all_round_grey"
+                    android:padding="5dp"
+                    android:textAppearance="@style/EditTextStyle"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Nhập ngày sinh" />
+
+                <TextView
+                    style="@style/MediumBlackText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/organisation" />
+
+                <EditText
+                    android:id="@+id/tvOrganisation"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_all_round_grey"
+                    android:padding="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:textAppearance="@style/EditTextStyle"
+                    android:hint="Nhập tên đơn vị" />
+
+                <TextView
+                    style="@style/MediumBlackText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/department" />
+
+                <EditText
+                    android:id="@+id/tvDepartment"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_all_round_grey"
+                    android:padding="5dp"
+                    android:textAppearance="@style/EditTextStyle"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Nhập tên phòng ban" />
+
+                <TextView
+                    style="@style/MediumBlackText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gender" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroup_character"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+                    <RadioButton
+                        android:id="@+id/radioButton_male"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Nam" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton_female"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="Nữ" />
+                </RadioGroup>
+
+                <TextView
+                    style="@style/MediumBlackText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/job_family" />
+
+                <EditText
+                    android:id="@+id/tvJob"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_all_round_grey"
+                    android:padding="5dp"
+                    android:textAppearance="@style/EditTextStyle"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Nhập chức vụ" />
+
+                <TextView
+                    style="@style/MediumBlackText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/status" />
+
+                <EditText
+                    android:id="@+id/tvStatus"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_all_round_grey"
+                    android:padding="5dp"
+                    android:textAppearance="@style/EditTextStyle"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Độc thân" />
+
+                <TextView
+                    style="@style/MediumBlackText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
                     android:text="@string/phone" />
 
                 <EditText
                     android:id="@+id/tvPhone"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/border_all_round_grey"
+                    android:padding="5dp"
+                    android:textAppearance="@style/EditTextStyle"
+                    android:layout_marginBottom="10dp"
                     android:hint="Nhập địện thoại" />
-                    <TextView
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/MediumBlackText"
-                        android:text="@string/email" />
 
-                    <EditText
-                        android:id="@+id/tvEmail"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Nhập emial" />
-                    <TextView
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/MediumBlackText"
-                        android:text="@string/add" />
+                <TextView
+                    style="@style/MediumBlackText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/email" />
 
-                    <EditText
-                        android:id="@+id/tvAdd"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Nhập địa chỉ" />
+                <EditText
+                    android:id="@+id/tvEmail"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_all_round_grey"
+                    android:padding="5dp"
+                    android:textAppearance="@style/EditTextStyle"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Nhập email" />
+
+                <TextView
+                    style="@style/MediumBlackText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/add" />
+
+                <EditText
+                    android:id="@+id/tvAdd"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_all_round_grey"
+                    android:padding="5dp"
+                    android:textAppearance="@style/EditTextStyle"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Nhập địa chỉ" />
             </LinearLayout>
+
             <Button
                 android:id="@+id/btnSubmit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/llInfo"
                 android:layout_centerHorizontal="true"
-                android:onClick="onClick"
-                android:textColor="@android:color/white"
                 android:background="@drawable/button_blue_bg"
-                android:text="Submit"></Button>
+                android:onClick="onClick"
+                android:text="Submit"
+                android:textColor="@android:color/white"></Button>
         </RelativeLayout>
 
     </androidx.core.widget.NestedScrollView>

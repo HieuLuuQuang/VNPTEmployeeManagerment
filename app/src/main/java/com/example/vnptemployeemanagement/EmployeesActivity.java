@@ -12,6 +12,8 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.vnptemployeemanagement.Adapter.EmployeeListAdapter;
+import com.example.vnptemployeemanagement.Models.Employee;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
@@ -42,7 +44,7 @@ public class EmployeesActivity extends AppCompatActivity {
             @Override
             public void onChanged(@Nullable final List<Employee> employees) {
                 // Update the cached copy of the words in the adapter.
-                adapter.setWords(employees);
+                adapter.setEmployees(employees);
             }
         });
 
@@ -60,7 +62,8 @@ public class EmployeesActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == NEW_WORD_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
-            Employee employee = new Employee(data.getStringExtra(NewWordActivity.EXTRA_REPLY));
+            //Employee employee = new Employee(data.getStringExtra(NewWordActivity.EXTRA_REPLY), "hihi");
+            Employee employee = new Employee(data.getStringExtra(NewWordActivity.EXTRA_REPLY), "26/11/1988","VNPT-HANOI", "Android team","Nam", "Dev","Single","0948122111","Hieu@gmail.com","Xa La Ha Dong" );
             mEmployeeViewModel.insert(employee);
         } else {
             Toast.makeText(

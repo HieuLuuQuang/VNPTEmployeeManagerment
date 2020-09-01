@@ -8,7 +8,7 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-import com.example.vnptemployeemanagement.Employee;
+import com.example.vnptemployeemanagement.Models.Employee;
 import com.example.vnptemployeemanagement.EmployeeDao;
 
 import java.util.concurrent.ExecutorService;
@@ -59,9 +59,10 @@ public abstract class EmployeeRoomDatabase extends RoomDatabase {
                 EmployeeDao dao = INSTANCE.employeeDao();
                 dao.deleteAll();
 
-                Employee employee = new Employee("Hello");
+                //Employee employee = new Employee("Hello","name");
+                Employee employee = new Employee("Luu Quang Hieu", "26/11/1988","VNPT-HANOI", "Android team","Nam", "Dev","Single","0948122111","Hieu@gmail.com","Xa La Ha Dong" );
                 dao.insert(employee);
-                employee = new Employee("World");
+                employee = new Employee("Nguyen Quang Hoa", "26/11/1988","VNPT-HANOI", "Android team","Nam", "Dev","Single","0948122111","Hieu@gmail.com","Xa La Ha Dong" );
                 dao.insert(employee);
             });
         }

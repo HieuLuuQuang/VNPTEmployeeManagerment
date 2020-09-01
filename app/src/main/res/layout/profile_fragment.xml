@@ -12,10 +12,10 @@
         android:layout_below="@+id/appBarLayout"
         android:fillViewport="true">
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <RelativeLayout
-                android:id="@+id/llIamge"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/llAvatar"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:background="@color/colorPrimaryDark"
@@ -27,6 +27,10 @@
                     android:layout_width="120dp"
                     android:layout_height="120dp"
                     android:layout_centerInParent="true"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="20dp"
                     android:background="@drawable/ic_avatar"></ImageView>
 
                 <ImageButton
@@ -34,11 +38,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="1dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="20dp"
                     android:layout_toRightOf="@id/avatar"
+                    app:layout_constraintTop_toTopOf="parent"
                     android:onClick="onClick"
+                    app:layout_constraintEnd_toEndOf="parent"
                     android:background="@drawable/ic_edit"></ImageButton>
+               <!-- <TextView
+                    android:id="@+id/tvEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Edit"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@android:color/white"
+                    android:background="@color/app_bg"
+                    app:layout_constraintLeft_toRightOf="@id/avatar"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBaseline_toBaselineOf="@id/avatar"
+                    android:textSize="20sp"></TextView>-->
                 <TextView
                     android:id="@+id/tvTitleName"
                     android:layout_width="wrap_content"
@@ -47,15 +64,17 @@
                     android:layout_marginTop="10dp"
                     android:textColor="@android:color/white"
                     android:background="@color/app_bg"
-                    android:layout_below="@id/avatar"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
+                    app:layout_constraintTop_toBottomOf="@id/avatar"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     android:textSize="20sp"></TextView>
-            </RelativeLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
             <LinearLayout
+                android:id="@+id/llInfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/llIamge"
+                android:layout_below="@+id/llAvatar"
                 android:orientation="vertical">
                 <TextView
                     android:layout_width="match_parent"
@@ -275,6 +294,17 @@
                         android:text="Xa La, Hà Đông, Hà Nội, Việt Nam" />
                 </LinearLayout>
             </LinearLayout>
+            <Button
+                android:id="@+id/btnDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/llInfo"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/button_blue_bg"
+                android:onClick="onClick"
+                android:text="Delete"
+                android:layout_marginTop="10dp"
+                android:textColor="@android:color/white"></Button>
         </RelativeLayout>
 
     </androidx.core.widget.NestedScrollView>
