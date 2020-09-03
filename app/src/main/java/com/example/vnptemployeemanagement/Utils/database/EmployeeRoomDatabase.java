@@ -62,7 +62,6 @@ public abstract class EmployeeRoomDatabase extends RoomDatabase {
                 //Employee employee = new Employee("Hello","name");
                 Employee employee = new Employee("Luu Quang Hieu", "26/11/1988","VNPT-HANOI", "Android team","Nam", "Dev","Single","0948122111","Hieu@gmail.com","Xa La Ha Dong" );
                 dao.insert(employee);
-                employee = new Employee("Nguyen Quang Hoa", "26/11/1988","VNPT-HANOI", "Android team","Nam", "Dev","Single","0948122111","Hieu@gmail.com","Xa La Ha Dong" );
                 dao.insert(employee);
             });
         }

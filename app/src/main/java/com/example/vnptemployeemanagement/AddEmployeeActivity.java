@@ -1,6 +1,5 @@
 package com.example.vnptemployeemanagement;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -19,14 +18,9 @@ public class AddEmployeeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.employee_layout);
-        ImageView icBack = findViewById(R.id.ic_left);
         TextView title = findViewById(R.id.toolbarTitle);
         title.setText(getString(R.string.add_employee));
-        icBack.setOnClickListener(
-                view ->
-                        onBackPressed()
-        );
-        ProfileEditFragment profileFragment = new ProfileEditFragment();
+        EmployeeEditFragment profileFragment = new EmployeeEditFragment();
 
         fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.imployee_fragment, profileFragment);
@@ -40,7 +34,8 @@ public class AddEmployeeActivity extends AppCompatActivity {
 
     public void onClick(View view) {
         switch (view.getId()) {
-
+            case R.id.ic_left:
+                onBackPressed();
             default:
                 break;
         }

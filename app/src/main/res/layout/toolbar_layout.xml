@@ -21,6 +21,7 @@
             android:layout_centerVertical="true"
             android:src="@drawable/ic_back"
             android:visibility="visible"
+            android:onClick="onClick"
             tools:ignore="ContentDescription" />
 
         <TextView

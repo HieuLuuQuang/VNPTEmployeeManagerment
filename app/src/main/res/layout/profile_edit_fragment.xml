@@ -133,23 +133,6 @@
                     android:textAppearance="@style/EditTextStyle"
                     android:layout_marginBottom="10dp"
                     android:hint="Nhập chức vụ" />
-
-                <TextView
-                    style="@style/MediumBlackText"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/status" />
-
-                <EditText
-                    android:id="@+id/tvStatus"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border_all_round_grey"
-                    android:padding="5dp"
-                    android:textAppearance="@style/EditTextStyle"
-                    android:layout_marginBottom="10dp"
-                    android:hint="Độc thân" />
-
                 <TextView
                     style="@style/MediumBlackText"
                     android:layout_width="fill_parent"

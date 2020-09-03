@@ -11,24 +11,26 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.vnptemployeemanagement.Utils.database.Keys;
+
 public class ProfileActivity extends AppCompatActivity {
     FragmentManager fragmentManager = getSupportFragmentManager();
     ImageView imgEdit;
     FragmentTransaction fragmentTransaction;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.employee_layout);
-        Toast.makeText(getApplicationContext(), "Profile activity", Toast.LENGTH_SHORT).show();
         ImageView icBack = findViewById(R.id.ic_left);
-        icBack.setOnClickListener(
+ /*       icBack.setOnClickListener(
                 view ->
                         onBackPressed()
-        );
+        );*/
         addProfileFragment();
 
         //Toolbar toolbar = findViewById(R.id.toolbar);
-       // setSupportActionBar(toolbar);
+        // setSupportActionBar(toolbar);
     }
 
     @Override
@@ -45,34 +47,43 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.buttonEdit:
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.imployee_fragment, new ProfileEditFragment());
+                fragmentTransaction.replace(R.id.imployee_fragment, new EmployeeEditFragment());
+                fragmentTransaction.addToBackStack(fragmentTransaction.getClass().getName());
                 fragmentTransaction.commit();
                 break;
+            case R.id.ic_left:
+                onBackPressed();
+                default:
+                break;
+
 
         }
     }
 
     @Override
-    public void onBackPressed(){
-        if (fragmentManager.getBackStackEntryCount() > 0) {
-           // Log.i("MainActivity", "popping backstack");
+    public void onBackPressed() {
+        if (fragmentManager.getBackStackEntryCount() == 1) {
+            finish();
+        } else if (fragmentManager.getBackStackEntryCount() > 1) {
             fragmentManager.popBackStack();
         } else {
-          //  Log.i("MainActivity", "nothing on backstack, calling super");
+            //  Log.i("MainActivity", "nothing on backstack, calling super");
             super.onBackPressed();
         }
     }
 
-    public void addProfileFragment(){
+
+    public void addProfileFragment() {
         ProfileFragment profileFragment = new ProfileFragment();
         Bundle bundle = new Bundle();
-        bundle.putString("TITLE", getString(R.string.add_employee));
+        bundle.putString(Keys.APP_TITLE, getString(R.string.add_employee));
         profileFragment.setArguments(bundle);
         fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.imployee_fragment, profileFragment);
+        fragmentTransaction.addToBackStack(profileFragment.getClass().getName());
         fragmentTransaction.commit();
         imgEdit = findViewById(R.id.buttonEdit);
     }
