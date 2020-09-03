@@ -1,15 +1,17 @@
-package com.example.vnptemployeemanagement;
+package com.example.vnptemployeemanagement.views.employees;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.vnptemployeemanagement.Interface.IAddNewEmployeeListener;
-import com.example.vnptemployeemanagement.Utils.database.Keys;
+import com.example.vnptemployeemanagement.R;
+import com.example.vnptemployeemanagement.utils.Keys;
+import com.example.vnptemployeemanagement.views.employees.AllEmployeesFragment;
+import com.example.vnptemployeemanagement.views.employees.EmployeeEditFragment;
 
 public class EmployeesActivity extends AppCompatActivity  implements IAddNewEmployeeListener {
     FragmentManager fragmentManager = getSupportFragmentManager();

@@ -1,4 +1,4 @@
-package com.example.vnptemployeemanagement.Models;
+package com.example.vnptemployeemanagement.models;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;

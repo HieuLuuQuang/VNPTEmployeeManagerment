@@ -1,4 +1,4 @@
-package com.example.vnptemployeemanagement;
+package com.example.vnptemployeemanagement.views.home;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.vnptemployeemanagement.views.employees.EmployeesActivity;
+import com.example.vnptemployeemanagement.NoticeActivity;
+import com.example.vnptemployeemanagement.R;
+import com.example.vnptemployeemanagement.views.organisations.OrganisationActivity;
+import com.example.vnptemployeemanagement.views.profile.ProfileActivity;
 
 public class HomeActivity extends AppCompatActivity {
 

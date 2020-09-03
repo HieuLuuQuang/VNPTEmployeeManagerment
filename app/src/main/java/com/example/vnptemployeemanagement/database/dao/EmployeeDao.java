@@ -1,4 +1,4 @@
-package com.example.vnptemployeemanagement;
+package com.example.vnptemployeemanagement.database.dao;
 
 /*
  * Copyright (C) 2017 Google Inc.
@@ -22,7 +22,7 @@ import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
-import com.example.vnptemployeemanagement.Models.Employee;
+import com.example.vnptemployeemanagement.models.Employee;
 
 import java.util.List;
 

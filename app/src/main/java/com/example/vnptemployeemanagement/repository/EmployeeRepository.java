@@ -1,4 +1,4 @@
-package com.example.vnptemployeemanagement.Repository;
+package com.example.vnptemployeemanagement.repository;
 
 /*
  * Copyright (C) 2017 Google Inc.
@@ -20,9 +20,9 @@ import android.app.Application;
 
 import androidx.lifecycle.LiveData;
 
-import com.example.vnptemployeemanagement.Models.Employee;
-import com.example.vnptemployeemanagement.Utils.database.EmployeeRoomDatabase;
-import com.example.vnptemployeemanagement.EmployeeDao;
+import com.example.vnptemployeemanagement.models.Employee;
+import com.example.vnptemployeemanagement.database.EmployeeRoomDatabase;
+import com.example.vnptemployeemanagement.database.dao.EmployeeDao;
 
 import java.util.List;
 

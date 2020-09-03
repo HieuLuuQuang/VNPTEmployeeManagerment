@@ -1,10 +1,12 @@
-package com.example.vnptemployeemanagement;
+package com.example.vnptemployeemanagement.views.organisations;
 
 import android.os.Bundle;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.vnptemployeemanagement.R;
 
 public class OrganisationActivity extends AppCompatActivity {
     @Override

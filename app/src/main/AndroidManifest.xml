@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashActivity" android:theme="@style/SplashscreenTheme"
+        <activity android:name=".views.home.SplashActivity" android:theme="@style/SplashscreenTheme"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,12 +18,12 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".HomeActivity" android:screenOrientation="portrait"></activity>
-        <activity android:name=".OrganisationActivity" android:screenOrientation="portrait"></activity>
-        <activity android:name=".ProfileActivity" android:screenOrientation="portrait"></activity>
-        <activity android:name=".AddEmployeeActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".views.home.HomeActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".views.organisations.OrganisationActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".views.profile.ProfileActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".views.employees.AddEmployeeActivity" android:screenOrientation="portrait"></activity>
         <activity android:name=".NoticeActivity" android:screenOrientation="portrait"></activity>
-        <activity android:name=".EmployeesActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".views.employees.EmployeesActivity" android:screenOrientation="portrait"></activity>
         <activity android:name=".NewWordActivity" android:screenOrientation="portrait"></activity>
 
     </application>

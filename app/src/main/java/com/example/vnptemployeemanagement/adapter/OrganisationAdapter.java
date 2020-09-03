@@ -1,4 +1,4 @@
-package com.example.vnptemployeemanagement.Adapter;
+package com.example.vnptemployeemanagement.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,13 +8,13 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.vnptemployeemanagement.Models.Employee;
 import com.example.vnptemployeemanagement.R;
+import com.example.vnptemployeemanagement.models.Employee;
 
 import java.util.List;
 
 
-public class EmployeeListAdapter extends RecyclerView.Adapter<EmployeeListAdapter.EmployeeViewHolder> {
+public class OrganisationAdapter extends RecyclerView.Adapter<OrganisationAdapter.EmployeeViewHolder> {
 
     class EmployeeViewHolder extends RecyclerView.ViewHolder {
         private final TextView wordItemView;
@@ -28,7 +28,7 @@ public class EmployeeListAdapter extends RecyclerView.Adapter<EmployeeListAdapte
     private final LayoutInflater mInflater;
     private List<Employee> mEmployees; // Cached copy of words
 
-    public EmployeeListAdapter(Context context) {
+    public OrganisationAdapter(Context context) {
         mInflater = LayoutInflater.from(context);
     }
 

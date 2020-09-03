@@ -1,4 +1,4 @@
-package com.example.vnptemployeemanagement;
+package com.example.vnptemployeemanagement.views.employees;
 
 /*
  * Copyright (C) 2017 Google Inc.
@@ -21,8 +21,8 @@ import android.app.Application;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
-import com.example.vnptemployeemanagement.Models.Employee;
-import com.example.vnptemployeemanagement.Repository.EmployeeRepository;
+import com.example.vnptemployeemanagement.models.Employee;
+import com.example.vnptemployeemanagement.repository.EmployeeRepository;
 
 import java.util.List;
 
@@ -46,7 +46,7 @@ public class EmployeeViewModel extends AndroidViewModel {
         mAllEmployees = mRepository.getAllEmployees();
     }
 
-    LiveData<List<Employee>> getAllWords() {
+    public LiveData<List<Employee>> getAllWords() {
         return mAllEmployees;
     }
 

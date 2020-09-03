@@ -1,4 +1,4 @@
-package com.example.vnptemployeemanagement.Utils.database;
+package com.example.vnptemployeemanagement.database;
 
 import android.content.Context;
 
@@ -8,8 +8,8 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-import com.example.vnptemployeemanagement.Models.Employee;
-import com.example.vnptemployeemanagement.EmployeeDao;
+import com.example.vnptemployeemanagement.models.Employee;
+import com.example.vnptemployeemanagement.database.dao.EmployeeDao;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

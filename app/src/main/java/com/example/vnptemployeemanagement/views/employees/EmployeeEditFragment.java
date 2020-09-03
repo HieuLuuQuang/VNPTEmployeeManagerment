@@ -1,4 +1,4 @@
-package com.example.vnptemployeemanagement;
+package com.example.vnptemployeemanagement.views.employees;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,8 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.vnptemployeemanagement.Models.Employee;
-import com.example.vnptemployeemanagement.Utils.database.Keys;
+import com.example.vnptemployeemanagement.R;
+import com.example.vnptemployeemanagement.models.Employee;
+import com.example.vnptemployeemanagement.utils.Keys;
 
 public class EmployeeEditFragment extends Fragment implements View.OnClickListener{
     EditText name;

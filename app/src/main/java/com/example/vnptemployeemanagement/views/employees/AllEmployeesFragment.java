@@ -1,8 +1,7 @@
-package com.example.vnptemployeemanagement;
+package com.example.vnptemployeemanagement.views.employees;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,10 +17,10 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.vnptemployeemanagement.Adapter.EmployeeListAdapter;
+import com.example.vnptemployeemanagement.R;
+import com.example.vnptemployeemanagement.adapter.EmployeeListAdapter;
 import com.example.vnptemployeemanagement.Interface.IAddNewEmployeeListener;
-import com.example.vnptemployeemanagement.Models.Employee;
-import com.example.vnptemployeemanagement.Utils.database.Keys;
+import com.example.vnptemployeemanagement.models.Employee;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
