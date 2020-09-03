@@ -167,7 +167,6 @@ public class EmployeeEditFragment extends Fragment implements View.OnClickListen
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btnSubmit:
-                if(isUpdateEmployee)
                 updateOrEditEmployee();
                 break;
             case R.id.radioButton_male:
