@@ -28,6 +28,8 @@ import com.example.vnptemployeemanagement.utils.MyApp;
 
 import java.util.List;
 
+import javax.crypto.interfaces.PBEKey;
+
 public class EmployeeRepository {
 
     private EmployeeDao mEmployeeDao;
@@ -53,6 +55,18 @@ public class EmployeeRepository {
     public void insert(Employee employee) {
         EmployeeRoomDatabase.databaseWriteExecutor.execute(() -> {
             mEmployeeDao.insert(employee);
+        });
+    }
+
+    public void delete(int id) {
+        EmployeeRoomDatabase.databaseWriteExecutor.execute(() -> {
+            mEmployeeDao.delete(id);
+        });
+    }
+
+    public void update(Employee employee) {
+        EmployeeRoomDatabase.databaseWriteExecutor.execute(() -> {
+            mEmployeeDao.update(employee);
         });
     }
 }

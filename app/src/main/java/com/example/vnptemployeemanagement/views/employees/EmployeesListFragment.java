@@ -25,7 +25,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
-public class EmployeesListFragment extends Fragment {
+public class EmployeesListFragment extends Fragment  {
 
     private EmployeeViewModel mEmployeeViewModel;
     IAddNewEmployeeListener iAddNewEmployeeListener;
@@ -96,5 +96,4 @@ public class EmployeesListFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
     }
-
 }

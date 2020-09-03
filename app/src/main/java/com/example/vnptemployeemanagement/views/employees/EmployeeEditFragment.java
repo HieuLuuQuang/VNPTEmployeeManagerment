@@ -1,7 +1,6 @@
 package com.example.vnptemployeemanagement.views.employees;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +11,6 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -37,8 +35,11 @@ public class EmployeeEditFragment extends Fragment implements View.OnClickListen
     EditText address;
     private EmployeeViewModel mEmployeeViewModel;
     boolean isAddEmployee = false;
+    boolean isUpdateEmployee = false;
     String selectedOrg = "";
     boolean isMale = true;
+    Employee updatedEmployee = null;
+
 
     @Nullable
     @Override
@@ -48,6 +49,8 @@ public class EmployeeEditFragment extends Fragment implements View.OnClickListen
         if (bundle != null) {
             String title = bundle.getString(Keys.APP_TITLE);
             isAddEmployee = bundle.getBoolean(Keys.ADD_EMPLOYEE);
+            isUpdateEmployee = bundle.getBoolean(Keys.EDIT_PROFILE);
+            updatedEmployee = bundle.getParcelable(Keys.UPDATED_PROFILE);
             TextView tvTitle = getActivity().findViewById(R.id.toolbarTitle);
             tvTitle.setText(title);
         }
@@ -69,6 +72,9 @@ public class EmployeeEditFragment extends Fragment implements View.OnClickListen
         address = (EditText) getActivity().findViewById(R.id.tvAdd);
         female = (RadioButton)getActivity().findViewById(R.id.radioButton_female);
         male = (RadioButton)getActivity().findViewById(R.id.radioButton_male);
+
+        updatedView();
+
         female.setOnClickListener(this);
         male.setOnClickListener(this);
         mEmployeeViewModel = new ViewModelProvider(this).get(EmployeeViewModel.class);
@@ -96,7 +102,20 @@ public class EmployeeEditFragment extends Fragment implements View.OnClickListen
 
     }
 
-    public void updateEmployee() {
+    public void updatedView(){
+        if(!isUpdateEmployee)
+            return;
+        name.setText(updatedEmployee.getName());
+        birthday.setText(updatedEmployee.getBirthDay());
+     //   spinnerOrganisation.setse;
+       // Spinner spinnerDepartment;
+        female.setSelected(updatedEmployee.getGender().equals(getString(R.string.female)));
+        position.setText(updatedEmployee.getPosition());
+        phone.setText(updatedEmployee.getPhone());
+        email.setText(updatedEmployee.getMail());
+        address.setText(updatedEmployee.getAddress());
+    }
+    public void updateOrEditEmployee() {
         boolean isValid = true;
         if (name.getText().toString().trim().isEmpty()) {
             name.setError("Nhập tên");
@@ -138,6 +157,9 @@ public class EmployeeEditFragment extends Fragment implements View.OnClickListen
             if (isAddEmployee) {
                 mEmployeeViewModel.insert(employee);
                 getActivity().onBackPressed();
+            } else if(isUpdateEmployee) {
+                mEmployeeViewModel.update(employee);
+                getActivity().onBackPressed();
             }
         }
     }
@@ -145,7 +167,8 @@ public class EmployeeEditFragment extends Fragment implements View.OnClickListen
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btnSubmit:
-                updateEmployee();
+                if(isUpdateEmployee)
+                updateOrEditEmployee();
                 break;
             case R.id.radioButton_male:
                 isMale = true;

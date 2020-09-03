@@ -21,10 +21,13 @@ import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import com.example.vnptemployeemanagement.models.Employee;
 
 import java.util.List;
+
+import static androidx.room.OnConflictStrategy.REPLACE;
 
 /**
  * The Room Magic is in this file, where you map a Java method call to an SQL query.
@@ -50,4 +53,10 @@ public interface EmployeeDao {
 
     @Query("DELETE FROM employee_table")
     void deleteAll();
+
+    @Query("DELETE FROM employee_table WHERE id = :id")
+    void delete(int id);
+
+    @Update(onConflict = REPLACE)
+    void update(Employee employee);
 }

@@ -77,4 +77,13 @@ public class EmployeeViewModel extends AndroidViewModel {
     void insert(Employee employee) {
         mRepository.insert(employee);
     }
+
+    void delete(int id) {
+        mRepository.delete(id);
+    }
+
+    void update(Employee employee)
+    {
+        mRepository.update(employee);
+    }
 }

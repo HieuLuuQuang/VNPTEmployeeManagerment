@@ -1,12 +1,15 @@
 package com.example.vnptemployeemanagement.models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "employee_table")
-public class Employee {
+public class Employee implements Parcelable {
 
     @PrimaryKey(autoGenerate = true)
     private int id;
@@ -61,6 +64,18 @@ public class Employee {
         this.phone = phone;
         this.mail  = eMail;
         this.address = address;
+    }
+
+    protected Employee(Parcel in) {
+        this.name = in.readString();
+        this.birthDay = in.readString();
+        this.organisation = in.readString();
+        this.department = in.readString();
+        this.gender = in.readString();
+        this.position = in.readString();
+        this.phone = in.readString();
+        this.mail  = in.readString();
+        this.address = in.readString();
     }
 
     public int getId() {
@@ -152,4 +167,26 @@ public class Employee {
     public void setAddress(@NonNull String address) {
         this.address = address;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+
+    }
+
+    public static final Creator<Employee> CREATOR = new Creator<Employee>() {
+        @Override
+        public Employee createFromParcel(Parcel in) {
+            return new Employee(in);
+        }
+
+        @Override
+        public Employee[] newArray(int size) {
+            return new Employee[size];
+        }
+    };
 }

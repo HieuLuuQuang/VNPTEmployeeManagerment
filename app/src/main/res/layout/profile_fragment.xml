@@ -214,35 +214,6 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="left"
-                        android:text="@string/status" />
-
-                    <TextView
-                        android:id="@+id/tvStatus"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="Độc thân" />
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    style="@style/BigDarkText"
-                    android:gravity="center_vertical"
-                    android:padding="10dp"
-                    android:background="@color/lightGrey"
-                    android:text="@string/contact_info"></TextView>
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/grey_border"
-                    android:padding="10dp">
-                    <TextView
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="left"
                         android:text="@string/phone" />
 
                     <TextView
@@ -294,17 +265,6 @@
                         android:text="Xa La, Hà Đông, Hà Nội, Việt Nam" />
                 </LinearLayout>
             </LinearLayout>
-            <Button
-                android:id="@+id/btnDelete"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/llInfo"
-                android:layout_centerHorizontal="true"
-                android:background="@drawable/button_blue_bg"
-                android:onClick="onClick"
-                android:text="Delete"
-                android:layout_marginTop="10dp"
-                android:textColor="@android:color/white"></Button>
         </RelativeLayout>
 
     </androidx.core.widget.NestedScrollView>

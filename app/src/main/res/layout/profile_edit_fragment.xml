@@ -41,7 +41,7 @@
                     android:padding="5dp"
                     android:textAppearance="@style/EditTextStyle"
                     android:layout_marginBottom="10dp"
-                    android:hint="Luu Quang Hieu" />
+                    android:hint="Nhập họ tên" />
 
                 <TextView
                     style="@style/MediumBlackText"

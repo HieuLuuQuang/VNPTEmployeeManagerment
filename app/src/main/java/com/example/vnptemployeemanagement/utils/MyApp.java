@@ -1,6 +1,7 @@
 package com.example.vnptemployeemanagement.utils;
 
 import com.example.vnptemployeemanagement.models.Department;
+import com.example.vnptemployeemanagement.models.Employee;
 import com.example.vnptemployeemanagement.models.Organisation;
 
 import java.util.ArrayList;
@@ -8,6 +9,7 @@ import java.util.List;
 
 public class MyApp {
     public static List<Organisation> mAllOrganisations;
+    public static List<Employee> mAllEmployees;
     public static void setOrganisation(){
         mAllOrganisations = new ArrayList<>();
         List<Department> listSWDepartment = new ArrayList<>();

@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.vnptemployeemanagement.utils.MyApp;
 import com.example.vnptemployeemanagement.views.employees.EmployeeEditFragment;
 import com.example.vnptemployeemanagement.R;
 import com.example.vnptemployeemanagement.utils.Keys;
@@ -24,7 +25,6 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.employee_layout);
         addProfileFragment();
-
         //Toolbar toolbar = findViewById(R.id.toolbar);
         // setSupportActionBar(toolbar);
     }
@@ -39,7 +39,6 @@ public class ProfileActivity extends AppCompatActivity {
 
     public void onOptionsMenuClosed(Menu menu) {
         super.onOptionsMenuClosed(menu);
-
     }
 
     public void onClick(View view) {
@@ -71,7 +70,7 @@ public class ProfileActivity extends AppCompatActivity {
     public void addProfileFragment() {
         ProfileFragment profileFragment = new ProfileFragment();
         Bundle bundle = new Bundle();
-        bundle.putString(Keys.APP_TITLE, getString(R.string.add_employee));
+        bundle.putParcelable(Keys.VIEW_PROFILE, MyApp.mAllEmployees.get(0));
         profileFragment.setArguments(bundle);
         fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.imployee_fragment, profileFragment);
