@@ -8,6 +8,7 @@ import android.os.Looper;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.vnptemployeemanagement.R;
+import com.example.vnptemployeemanagement.utils.MyApp;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -20,6 +21,7 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        MyApp.setOrganisation();
         new Handler(Looper.myLooper()).postDelayed(
                 new Runnable() {
                     @Override
@@ -29,6 +31,7 @@ public class SplashActivity extends AppCompatActivity {
                     }
                 },100
         );
+
     }
 
     @Override

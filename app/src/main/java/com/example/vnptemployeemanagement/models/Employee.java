@@ -36,10 +36,6 @@ public class Employee {
     String position;
 
     @NonNull
-    @ColumnInfo(name = "status")
-    String status;
-
-    @NonNull
     @ColumnInfo(name = "phone")
     String phone;
 
@@ -55,18 +51,16 @@ public class Employee {
 
     }
 
-    public Employee(String name, String birthDay, String organisation, String department, String gender, String position, String status, String phone, String eMail, String address) {
+    public Employee(String name, String birthDay, String organisation, String department, String gender, String position, String phone, String eMail, String address) {
         this.name = name;
         this.birthDay = birthDay;
         this.organisation = organisation;
         this.department = department;
         this.gender = gender;
         this.position = position;
-        this.status = status;
         this.phone = phone;
         this.mail  = eMail;
         this.address = address;
-
     }
 
     public int getId() {
@@ -129,15 +123,6 @@ public class Employee {
 
     public void setPosition(@NonNull String position) {
         this.position = position;
-    }
-
-    @NonNull
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(@NonNull String status) {
-        this.status = status;
     }
 
     @NonNull

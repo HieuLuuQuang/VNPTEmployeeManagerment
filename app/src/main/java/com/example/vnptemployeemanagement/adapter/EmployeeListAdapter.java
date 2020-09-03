@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,17 +17,24 @@ import java.util.List;
 
 public class EmployeeListAdapter extends RecyclerView.Adapter<EmployeeListAdapter.EmployeeViewHolder> {
 
+    Context context;
     class EmployeeViewHolder extends RecyclerView.ViewHolder {
-        private final TextView wordItemView;
+        private final TextView tvName;
+        private final TextView tvPosition;
+        private final TextView tvEmail;
+        private final ImageView ivAvatar;
 
         private EmployeeViewHolder(View itemView) {
             super(itemView);
-            wordItemView = itemView.findViewById(R.id.tvName);
+            tvName = itemView.findViewById(R.id.tvName);
+            tvPosition = itemView.findViewById(R.id.tvPosition);
+            tvEmail = itemView.findViewById(R.id.tvEmail);
+            ivAvatar = itemView.findViewById(R.id.ivAvatar);
         }
     }
 
     private final LayoutInflater mInflater;
-    private List<Employee> mEmployees; // Cached copy of words
+    private List<Employee> mEmployees;
 
     public EmployeeListAdapter(Context context) {
         mInflater = LayoutInflater.from(context);
@@ -34,28 +42,32 @@ public class EmployeeListAdapter extends RecyclerView.Adapter<EmployeeListAdapte
 
     @Override
     public EmployeeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = mInflater.inflate(R.layout.recyclerview_item, parent, false);
+        View itemView = mInflater.inflate(R.layout.employee_recyclerview_item, parent, false);
         return new EmployeeViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(EmployeeViewHolder holder, int position) {
         if (mEmployees != null) {
-            Employee current = mEmployees.get(position);
-            holder.wordItemView.setText(current.getName());
+            Employee curentEmployee = mEmployees.get(position);
+            holder.tvName.setText(curentEmployee.getName());
+            if(curentEmployee.getGender().equals(context.getString(R.string.female)))
+                holder.ivAvatar.setBackgroundResource(R.drawable.female_avatar);
+            else
+                holder.ivAvatar.setBackgroundResource(R.drawable.ic_avatar);
+            holder.tvPosition.setText(curentEmployee.getPosition());
+            holder.tvEmail.setText(curentEmployee.getMail());
         } else {
-            // Covers the case of data not being ready yet.
-            holder.wordItemView.setText("No Word");
+            holder.tvName.setText("No Word");
         }
     }
 
-    public void setEmployees(List<Employee> employees) {
+    public void setEmployees(List<Employee> employees, Context context) {
+        this.context = context;
         mEmployees = employees;
         notifyDataSetChanged();
     }
 
-    // getItemCount() is called many times, and when it is first called,
-    // mWords has not been updated (means initially, it's null, and we can't return null).
     @Override
     public int getItemCount() {
         if (mEmployees != null)

@@ -23,11 +23,6 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.employee_layout);
-        ImageView icBack = findViewById(R.id.ic_left);
- /*       icBack.setOnClickListener(
-                view ->
-                        onBackPressed()
-        );*/
         addProfileFragment();
 
         //Toolbar toolbar = findViewById(R.id.toolbar);
@@ -59,8 +54,6 @@ public class ProfileActivity extends AppCompatActivity {
                 onBackPressed();
                 default:
                 break;
-
-
         }
     }
 
@@ -71,11 +64,9 @@ public class ProfileActivity extends AppCompatActivity {
         } else if (fragmentManager.getBackStackEntryCount() > 1) {
             fragmentManager.popBackStack();
         } else {
-            //  Log.i("MainActivity", "nothing on backstack, calling super");
             super.onBackPressed();
         }
     }
-
 
     public void addProfileFragment() {
         ProfileFragment profileFragment = new ProfileFragment();

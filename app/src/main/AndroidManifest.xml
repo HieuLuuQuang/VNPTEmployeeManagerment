@@ -21,10 +21,8 @@
         <activity android:name=".views.home.HomeActivity" android:screenOrientation="portrait"></activity>
         <activity android:name=".views.organisations.OrganisationActivity" android:screenOrientation="portrait"></activity>
         <activity android:name=".views.profile.ProfileActivity" android:screenOrientation="portrait"></activity>
-        <activity android:name=".views.employees.AddEmployeeActivity" android:screenOrientation="portrait"></activity>
         <activity android:name=".NoticeActivity" android:screenOrientation="portrait"></activity>
         <activity android:name=".views.employees.EmployeesActivity" android:screenOrientation="portrait"></activity>
-        <activity android:name=".NewWordActivity" android:screenOrientation="portrait"></activity>
 
     </application>
 

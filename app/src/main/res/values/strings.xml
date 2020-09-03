@@ -25,5 +25,7 @@
     <string name="edit_profile">Thay đổi thông tin nhân viên</string>
     <string name="contact_info">Thông tin liên hệ</string>
     <string name="add_employee">Thêm nhân viên</string>
+    <string name="female">Nữ</string>
+    <string name="male">Nam</string>
 
 </resources>

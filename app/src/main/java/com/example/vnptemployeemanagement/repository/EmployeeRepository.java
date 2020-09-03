@@ -23,6 +23,8 @@ import androidx.lifecycle.LiveData;
 import com.example.vnptemployeemanagement.models.Employee;
 import com.example.vnptemployeemanagement.database.EmployeeRoomDatabase;
 import com.example.vnptemployeemanagement.database.dao.EmployeeDao;
+import com.example.vnptemployeemanagement.models.Organisation;
+import com.example.vnptemployeemanagement.utils.MyApp;
 
 import java.util.List;
 
@@ -30,15 +32,22 @@ public class EmployeeRepository {
 
     private EmployeeDao mEmployeeDao;
     private LiveData<List<Employee>> mAllEmployees;
+    private List<Organisation> mAllOrganisation;
+
 
     public EmployeeRepository(Application application) {
         EmployeeRoomDatabase db = EmployeeRoomDatabase.getDatabase(application);
         mEmployeeDao = db.employeeDao();
         mAllEmployees = mEmployeeDao.getAlphabetizedWords();
+        mAllOrganisation = MyApp.mAllOrganisations;
     }
 
     public LiveData<List<Employee>> getAllEmployees() {
         return mAllEmployees;
+    }
+
+    public List<Organisation> getAllOrganisation() {
+        return mAllOrganisation;
     }
 
     public void insert(Employee employee) {

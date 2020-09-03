@@ -25,8 +25,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
-public class AllEmployeesFragment extends Fragment {
-    public static final int NEW_WORD_ACTIVITY_REQUEST_CODE = 1;
+public class EmployeesListFragment extends Fragment {
 
     private EmployeeViewModel mEmployeeViewModel;
     IAddNewEmployeeListener iAddNewEmployeeListener;
@@ -34,7 +33,6 @@ public class AllEmployeesFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d("hieubeo","onCreate");
     }
 
     @Nullable
@@ -49,7 +47,6 @@ public class AllEmployeesFragment extends Fragment {
 
         TextView tvTitle = getActivity().findViewById(R.id.toolbarTitle);
         tvTitle.setText(getString(R.string.employee_list));
-        Log.d("hieubeo","onCreateView");
         return view;
     }
 
@@ -67,7 +64,6 @@ public class AllEmployeesFragment extends Fragment {
         if(context instanceof Activity){
             iAddNewEmployeeListener = (EmployeesActivity)context;
         }
-        Log.d("hieubeo","onAttach");
     }
 
     @Override
@@ -78,17 +74,11 @@ public class AllEmployeesFragment extends Fragment {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        // Get a new or existing ViewModel from the ViewModelProvider.
         mEmployeeViewModel = new ViewModelProvider(this).get(EmployeeViewModel.class);
-
-        // Add an observer on the LiveData returned by getAlphabetizedWords.
-        // The onChanged() method fires when the observed data changes and the activity is
-        // in the foreground.
         mEmployeeViewModel.getAllWords().observe(getActivity(), new Observer<List<Employee>>() {
             @Override
             public void onChanged(@Nullable final List<Employee> employees) {
-                // Update the cached copy of the words in the adapter.
-                adapter.setEmployees(employees);
+                adapter.setEmployees(employees, getContext());
             }
         });
 
@@ -97,7 +87,7 @@ public class AllEmployeesFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if(iAddNewEmployeeListener != null)
-                    iAddNewEmployeeListener.onAddViewEmployee();
+                    iAddNewEmployeeListener.onAddViewEmployee(true, null);
             }
         });
     }
@@ -105,24 +95,6 @@ public class AllEmployeesFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
     }
 
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        Log.d("hieubeo","onDeTach");
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        Log.d("hieubeo","onDestroy");
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        Log.d("hieubeo","onDestroyView");
-    }
 }

@@ -5,6 +5,7 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity(tableName = "employee_organisation")
@@ -21,7 +22,11 @@ public class Organisation {
     @ColumnInfo(name = "departments")
     List<Department> departments;
 
-    Organisation(String organisationName, List<Department> departments) {
+    public Organisation(){
+
+    }
+
+    public Organisation(String organisationName, List<Department> departments) {
         this.organisationName = organisationName;
         this.departments = departments;
     }
@@ -50,5 +55,13 @@ public class Organisation {
 
     public void setDepartments(@NonNull List<Department> departments) {
         this.departments = departments;
+    }
+
+    public ArrayList<String> getAllDepartmentName(){
+        ArrayList<String> list = new ArrayList<>();
+        for(Department department: departments){
+            list.add(department.getDepartmentName());
+        }
+        return list;
     }
 }

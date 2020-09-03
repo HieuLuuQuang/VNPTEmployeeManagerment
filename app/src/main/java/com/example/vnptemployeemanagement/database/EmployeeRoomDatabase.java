@@ -60,9 +60,11 @@ public abstract class EmployeeRoomDatabase extends RoomDatabase {
                 dao.deleteAll();
 
                 //Employee employee = new Employee("Hello","name");
-                Employee employee = new Employee("Luu Quang Hieu", "26/11/1988","VNPT-HANOI", "Android team","Nam", "Dev","Single","0948122111","Hieu@gmail.com","Xa La Ha Dong" );
+                Employee employee = new Employee("Luu Quang Hieu", "26/11/1998","VNPT Software Hanoi", "Team Web","Nam", "Dev","0948122111","Hieu@gmail.com","Xa La Ha Dong" );
+                Employee employee1 = new Employee("Nguyen Thu Hoà", "26/11/1998","VNPT Software HoChiMinh", "Team IOS","Nữ", "Tester","0948122111","Hieu@gmail.com","Xa La Ha Dong" );
+
                 dao.insert(employee);
-                dao.insert(employee);
+                dao.insert(employee1);
             });
         }
     };

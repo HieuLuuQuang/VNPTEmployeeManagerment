@@ -21,9 +21,12 @@ import android.app.Application;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
+import com.example.vnptemployeemanagement.models.Department;
 import com.example.vnptemployeemanagement.models.Employee;
+import com.example.vnptemployeemanagement.models.Organisation;
 import com.example.vnptemployeemanagement.repository.EmployeeRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -34,20 +37,41 @@ import java.util.List;
 public class EmployeeViewModel extends AndroidViewModel {
 
     private EmployeeRepository mRepository;
-    // Using LiveData and caching what getAlphabetizedWords returns has several benefits:
-    // - We can put an observer on the data (instead of polling for changes) and only update the
-    //   the UI when the data actually changes.
-    // - Repository is completely separated from the UI through the ViewModel.
     private LiveData<List<Employee>> mAllEmployees;
+    private List<Organisation> mAllOrganisation;
+
 
     public EmployeeViewModel(Application application) {
         super(application);
         mRepository = new EmployeeRepository(application);
         mAllEmployees = mRepository.getAllEmployees();
+        mAllOrganisation = mRepository.getAllOrganisation();
     }
 
     public LiveData<List<Employee>> getAllWords() {
         return mAllEmployees;
+    }
+
+    public List<Organisation> getAllOrganisations() {
+        return mAllOrganisation;
+    }
+
+    public ArrayList<String> getAllOrganisationsName(){
+        ArrayList<String> list = new ArrayList<>();
+        for(Organisation organisation: mAllOrganisation){
+            list.add(organisation.getOrganisationName());
+        }
+        return list;
+    }
+
+    public ArrayList<String> getCorrespondingDepartment(String org){
+        ArrayList<String> list = new ArrayList<>();
+        for(Organisation organisation: mAllOrganisation){
+            if(organisation.getOrganisationName() == org){
+                list.addAll(organisation.getAllDepartmentName());
+            }
+        }
+        return list;
     }
 
     void insert(Employee employee) {
